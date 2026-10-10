@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+ * AirForShare design tokens
+ * Extracted from the production stylesheet (assets/css/all.css).
+ * Exposed through Tailwind v4 @theme so utilities like bg-surface,
+ * text-ink, border-line resolve to the original palette.
+ * ------------------------------------------------------------------ */
+@theme {
+  --color-page: #f4f4f4;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f8f8f8;
+  --color-surface-raised: #ebebeb;
+  --color-input: #fafafa;
+  --color-inverse: #000000;
+
+  --color-ink: #4a4a4a;
+  --color-heading: #000000;
+  --color-heading-alt: #333333;
+  --color-muted: #9b9b9b;
+  --color-tertiary: #999999;
+  --color-danger: #d0021b;
+
+  --color-accent: #638eff;
+  --color-accent-hover: #745dff;
+  --color-grad-start: #864bff;
+  --color-grad-end: #5082ff;
+
+  --color-line: #eaeaea;
+  --color-line-dashed: #dddddd;
+  --color-upload: #ababab;
+  --color-focus: #845afb;
+
+  --font-sans: var(--font-open-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-page);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+/* ------------------------------------------------------------------ *
+ * Primary button — faithful reproduction of the original .btn
+ * (bordered, italic, gradient border + gradient text on hover).
+ * ------------------------------------------------------------------ */
+.afs-btn {
+  position: relative;
+  display: inline-block;
+  min-height: 61px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  border: solid 2px var(--color-heading);
+  border-radius: 0;
+  background: var(--color-surface);
+  font-family: var(--font-sans);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  line-height: 57px;
+  text-align: center;
+  color: var(--color-heading);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+
+.afs-btn::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: -2px;
+  box-sizing: border-box;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  line-height: 57px;
+  text-align: center;
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-grad-start),
+    var(--color-grad-end)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  border-style: solid;
+  border-width: 2px;
+  border-image-source: linear-gradient(
+    to bottom,
+    var(--color-grad-start),
+    var(--color-grad-end)
+  );
+  border-image-slice: 1;
+  transition: all 0.15s ease-in-out;
+}
+
+.afs-btn:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.afs-btn:active {
+  color: #fff;
+  background-image: linear-gradient(
+    to bottom,
+    var(--color-grad-start),
+    var(--color-grad-end)
+  );
+}
+
+.afs-btn:active::after {
+  content: "";
+}
+
+.afs-btn:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.afs-btn:disabled,
+.afs-btn[aria-disabled="true"] {
+  opacity: 0.21;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .afs-btn {
+    font-size: 24px;
+  }
+}
+
+/* Vertically center the loading spinner used in the global loader. */
+@keyframes afs-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.afs-spin {
+  animation: afs-spin 1s linear infinite;
+}
