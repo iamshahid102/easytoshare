@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 const inputClass =
-  "mb-4 w-full box-border border border-[#c9c9c9] bg-input px-4 py-3 text-[15px] text-ink outline-none transition-colors placeholder:font-light placeholder:text-muted focus:border-focus";
+  "mb-4 w-full box-border border border-[#d8cfb6] bg-input px-4 py-3 text-[15px] text-ink outline-none transition-colors placeholder:font-light placeholder:text-muted focus:border-focus";
 
 export function LoginForm() {
   const [submitted, setSubmitted] = useState(false);

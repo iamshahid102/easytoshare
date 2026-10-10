@@ -8,7 +8,7 @@ export function PageCard({
   className?: string;
 }) {
   return (
-    <div className="relative border border-surface bg-surface shadow-[0_21px_33px_0_rgba(0,0,0,0.1)]">
+    <div className="relative border border-surface bg-surface shadow-[0_21px_33px_0_rgba(13,27,61,0.12)]">
       <div
         className={`mx-auto box-border max-w-[475px] px-[15px] py-[51px] text-center ${className}`}
       >

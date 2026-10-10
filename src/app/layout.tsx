@@ -12,24 +12,22 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: {
-    default: "AirForShare.com - Virtual Desktop for your Wi-Fi",
-    template: "%s - AirForShare.com",
+    default: "Easy To Share - Virtual Desktop for your Wi-Fi",
+    template: "%s - Easy To Share",
   },
   description: "Share instantly between devices connected to one network",
-  applicationName: "AirForShare",
+  applicationName: "Easy To Share",
   openGraph: {
-    title: "AirForShare.com - Virtual Desktop for your Wi-Fi",
+    title: "Easy To Share - Virtual Desktop for your Wi-Fi",
     description: "Share instantly between devices connected to one network",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#ffffff",
+  themeColor: "#f5f0e1",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
 };
 
 export default function RootLayout({
@@ -40,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={openSans.variable}>
       <body className="font-sans">
-        <div className="relative mx-auto box-border min-h-screen w-full min-w-[320px] max-w-[992px] px-4 pb-48 md:flex md:flex-col md:justify-center md:pt-20 lg:pt-[155px]">
+        <div className="relative mx-auto box-border min-h-dvh w-full max-w-[992px] px-4 pb-48 md:flex md:flex-col md:justify-center md:pt-20 lg:pt-[155px]">
           <SiteHeader />
           {children}
           <SiteFooter />

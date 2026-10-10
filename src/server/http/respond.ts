@@ -10,7 +10,7 @@ export function errorResponse(error: unknown): NextResponse {
     );
   }
 
-  console.error("[airforshare] unhandled error", error);
+  console.error("[easy-to-share] unhandled error", error);
   return NextResponse.json(
     { error: { code: "internal_error", message: "Something went wrong" } },
     { status: 500 },

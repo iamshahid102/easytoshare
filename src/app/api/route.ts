@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   const store = await getApiStore();
   return NextResponse.json({
-    name: "AirForShare API",
+    name: "Easy To Share API",
     version: "0.1.0",
     store: store.name,
     endpoints: [

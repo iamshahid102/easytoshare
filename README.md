@@ -1,4 +1,4 @@
-# AirForShare (clone)
+# Easy To Share
 
 A full-stack reproduction of **[airforshare.com](https://airforshare.com)** — share text and files between any
 devices that sit behind the same public IP, with no pairing, no accounts and no app install.
@@ -19,7 +19,7 @@ network and both will show the same room.
 
 ## How it works
 
-AirForShare is **not** peer-to-peer. All devices behind one router share one public IP address
+Easy To Share is **not** peer-to-peer. All devices behind one router share one public IP address
 (NAT), so the server uses `HMAC(clientIp, dailySalt)` as the key of a shared "clipboard room". Any
 device that resolves to that IP lands in the same room. An httpOnly `afs_device` cookie records
 which device uploaded which item, which is what makes deleting owner-only.
@@ -57,6 +57,17 @@ Errors are returned as `{ "error": { "code": "...", "message": "..." } }`.
 
 The default store is in-memory (zero setup, cleared on restart). Set `MONGODB_URI` in `.env.local`
 to use MongoDB via Mongoose — documents expire through TTL indexes plus the same sweeping job.
+
+## Brand assets
+
+| File | Purpose |
+|---|---|
+| `public/easy-to-share-logo.png` | Page logo lockup — transparent PNG trimmed to its exact bounds (429 × 122) |
+| `public/easy-to-share-icon.png` | Square app icon derived from the logo mark (512 × 512) |
+| `src/app/icon.png` | Browser icon (Next.js metadata file convention) |
+| `src/app/favicon.ico` | Multi-size favicon (16/32/48/256) |
+
+The layout is responsive from 280 px up to 1920 px in both portrait and landscape — verified with no horizontal overflow, no header collisions and the sticky footer fitting at every breakpoint.
 
 ## Documentation
 

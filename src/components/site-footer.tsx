@@ -2,12 +2,12 @@ import { FacebookIcon, HeartIcon, TwitterIcon } from "@/components/icons";
 
 export function SiteFooter() {
   return (
-    <footer className="absolute inset-x-0 bottom-0 box-border h-48 px-5 py-[27px] text-center text-sm font-light leading-[1.93] tracking-[-0.3px] text-muted">
-      <div className="mb-[45px]">
-        © 2011-{new Date().getFullYear()} AirForShare.com
+    <footer className="absolute inset-x-0 bottom-0 box-border min-h-48 px-5 py-[27px] text-center text-sm font-light leading-[1.93] tracking-[-0.3px] text-muted">
+      <div className="mb-[40px]">
+        © 2011-{new Date().getFullYear()} Easy To Share
       </div>
 
-      <div className="mb-[45px]">
+      <div className="mb-[40px]">
         Made in{" "}
         <a
           href="https://birdscorp.com/"
@@ -26,7 +26,7 @@ export function SiteFooter() {
             href="https://www.facebook.com/airforshare"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="AirForShare on Facebook"
+            aria-label="Easy To Share on Facebook"
             className="group flex h-[30px] w-[30px] items-center"
           >
             <FacebookIcon className="h-auto w-full transition-colors [&_path]:transition-[fill] [&_path]:group-hover:fill-heading" />
@@ -37,7 +37,7 @@ export function SiteFooter() {
             href="https://www.twitter.com/airforshare"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="AirForShare on Twitter"
+            aria-label="Easy To Share on Twitter"
             className="group flex h-[30px] w-[30px] items-center"
           >
             <TwitterIcon className="h-auto w-full [&_path]:transition-[fill] [&_path]:group-hover:fill-heading" />

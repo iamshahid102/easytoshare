@@ -68,11 +68,10 @@ export function ShareApp() {
       {offline ? (
         <div
           role="alert"
-          className="mb-4 border border-[#f2c4c9] bg-[#fff5f5] px-5 py-3 text-left text-[13px] leading-[1.7] text-danger"
+          className="mb-4 border border-[#e1b9ae] bg-[#fbf0ea] px-5 py-3 text-left text-[13px] leading-[1.7] text-danger"
         >
           <strong>The service is unreachable.</strong> The API now runs inside
-          this same app — make sure it is started with{" "}
-          <code className="rounded bg-white px-1.5 py-0.5">npm run dev</code>, then
+          this same app — make sure it is started with{" "}            <code className="rounded bg-surface px-1.5 py-0.5">npm run dev</code>, then
           hit{" "}
           <button
             type="button"
@@ -85,7 +84,7 @@ export function ShareApp() {
         </div>
       ) : null}
 
-      <div className="relative border border-surface bg-surface shadow-[0_21px_33px_0_rgba(0,0,0,0.1)]">
+      <div className="relative border border-surface bg-surface shadow-[0_21px_33px_0_rgba(13,27,61,0.12)]">
         {/* Tab rail (desktop). `z-10` keeps it above the content panel, which is
             also positioned and would otherwise swallow the clicks. */}
         <div className="absolute left-0 top-0 z-10 hidden h-full w-[75px] bg-surface-alt md:block">

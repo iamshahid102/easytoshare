@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { LogoFull, LogoMark } from "@/components/icons";
+import { Logo } from "@/components/logo";
 
 const NAV = [
   { href: "/about", label: "How it works" },
@@ -30,14 +30,13 @@ export function SiteHeader() {
     <header className="relative mb-[18px] box-border h-[65px] md:absolute md:inset-x-[15px] md:top-0 md:mb-0 md:flex md:h-auto md:items-center md:justify-between md:pt-[11px] md:pr-[19px] lg:h-40">
       <Link
         href="/"
-        aria-label="AirForShare home"
+        aria-label="Easy To Share home"
         onClick={() => setOpen(false)}
         className={`absolute left-[28px] top-[19px] inline-block transition-opacity duration-150 md:relative md:left-0 md:top-0 lg:top-[3px] ${
           open ? "max-md:pointer-events-none max-md:opacity-0" : ""
         }`}
       >
-        <LogoMark className="h-[27px] w-[26px] lg:hidden" />
-        <LogoFull className="hidden lg:flex" />
+        <Logo priority className="h-[25px] sm:h-[27px] md:h-[33px]" />
       </Link>
 
       <button
@@ -46,9 +45,9 @@ export function SiteHeader() {
         aria-expanded={open}
         aria-controls="site-menu"
         onClick={() => setOpen((value) => !value)}
-        className="absolute right-[18px] top-5 z-[60] h-7 w-[33px] cursor-pointer border-none bg-transparent p-0 focus:outline-none md:hidden"
+        className="absolute right-[16px] top-[10px] z-[60] h-11 w-11 cursor-pointer border-none bg-transparent p-0 focus:outline-none md:hidden"
       >
-        <span className="relative left-1/2 block h-4 w-5 -translate-x-1/2">
+        <span className="relative left-1/2 top-1/2 block h-4 w-5 -translate-x-1/2 -translate-y-1/2">
           <span
             className={`absolute left-0 block h-0.5 w-5 rounded-sm bg-ink transition-all duration-300 ${
               open ? "top-1/2 -translate-y-1/2 rotate-45" : "top-0"

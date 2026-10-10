@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { LogoMark } from "@/components/icons";
+import { Logo } from "@/components/logo";
 import { PageCard, PageTitle } from "@/components/page-card";
 
 export const metadata: Metadata = {
   title: "Download",
-  description: "Get the AirForShare app for your devices.",
+  description: "Get the Easy To Share app for your devices.",
 };
 
 const CHANNELS = [
@@ -23,7 +23,7 @@ const CHANNELS = [
   },
   {
     name: "Add to Home Screen",
-    detail: "Install AirForShare as a PWA from your browser menu.",
+    detail: "Install Easy To Share as a PWA from your browser menu.",
     href: "/",
     cta: "Install",
   },
@@ -32,7 +32,7 @@ const CHANNELS = [
 export default function DownloadsPage() {
   return (
     <PageCard className="py-[62px]">
-      <LogoMark className="mx-auto mb-6 h-[48px] w-[45px]" />
+      <Logo className="mx-auto mb-6 block h-[52px] px-4 md:h-[60px]" />
       <PageTitle>Download App</PageTitle>
 
       <ul className="space-y-3 text-left">

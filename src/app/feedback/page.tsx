@@ -4,7 +4,7 @@ import { PageCard, PageTitle } from "@/components/page-card";
 
 export const metadata: Metadata = {
   title: "Feedback",
-  description: "Tell us what you think about AirForShare.",
+  description: "Tell us what you think about Easy To Share.",
 };
 
 export default function FeedbackPage() {

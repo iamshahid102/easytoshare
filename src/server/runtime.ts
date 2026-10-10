@@ -34,10 +34,10 @@ export function startSweeper(): void {
       .then((store) => store.sweepExpired(Date.now()))
       .then((count) => {
         if (count > 0) {
-          console.log(`[airforshare] swept ${count} expired room(s)`);
+          console.log(`[easy-to-share] swept ${count} expired room(s)`);
         }
       })
-      .catch((error) => console.error("[airforshare] sweep failed", error));
+      .catch((error) => console.error("[easy-to-share] sweep failed", error));
   }, config.sweepIntervalMs);
 
   // Never keep a process alive just for the sweeper.

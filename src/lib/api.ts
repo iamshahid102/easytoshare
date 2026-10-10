@@ -1,5 +1,5 @@
 /**
- * Typed client for the AirForShare Express API.
+ * Typed client for the Easy To Share API.
  *
  * By default requests are relative (`/api/...`) and reach the backend through
  * the Next.js rewrite proxy — same origin, so cookies and SSE work with no

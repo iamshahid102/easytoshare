@@ -1,4 +1,4 @@
-# AirForShare Clone — How It Was Built (single full-stack Next.js app)
+# Easy To Share — How It Was Built (single full-stack Next.js app)
 
 A short, complete summary of the architecture, the design decisions, and every library/framework used.
 
@@ -25,7 +25,7 @@ A short, complete summary of the architecture, the design decisions, and every l
 
 ## 2. How the original works (the core insight we cloned)
 
-AirForShare is **not** WebRTC/P2P. The server keys a "clipboard room" by the caller's **public IP address**. All devices on one Wi-Fi NAT to the same public IP, so they automatically share a room — that is the whole "no pairing needed" trick. A cookie distinguishes *which device* uploaded an item.
+Easy To Share is **not** WebRTC/P2P. The server keys a "clipboard room" by the caller's **public IP address**. All devices on one Wi-Fi NAT to the same public IP, so they automatically share a room — that is the whole "no pairing needed" trick. A cookie distinguishes *which device* uploaded an item.
 
 The clone reproduces this, but never stores the raw IP: it uses `HMAC(ip, dailySalt)` as the room id, and an httpOnly `afs_device` cookie for ownership.
 
@@ -36,7 +36,7 @@ The clone reproduces this, but never stores the raw IP: it uses `HMAC(ip, dailyS
 **Goal:** pixel-faithful, fully responsive reproduction of airforshare.com.
 
 **Approach**
-1. Scanned the live site and extracted the real design tokens from its stylesheet (accent `#638eff`, gradients `#864bff → #5082ff`, page `#f4f4f4`, text/border shades).
+1. Scanned the live site and extracted its real design tokens (original accent `#638eff`, gradients `#864bff → #5082ff`, page `#f4f4f4`, text/border shades), then re-skinned them onto the Easy To Share brand palette — deep navy `#0D1B3D` on warm cream `#F5F0E1`, with every surface/border/accent token derived from those two colors.
 2. Mapped each token into Tailwind v4 `@theme` so utilities like `bg-surface`, `text-ink`, `border-line` resolve to the original palette.
 3. Rebuilt layout dimensions exactly from the source CSS (992px container, 75px desktop tab rail, 69px mobile tab row, 48px headings, 280px drop zone, etc.).
 
@@ -54,7 +54,7 @@ src/
     share-app.tsx     # card + Text/Files tabs (desktop rail / mobile row)
     text-panel.tsx    # auto-grow textarea, autosave, Clear/Save
     files-panel.tsx   # drag & drop, grid, previews, delete, Download All
-    page-card.tsx, icons.tsx, feedback-form.tsx, login-form.tsx
+    page-card.tsx, logo.tsx, logo-canvas.tsx, icons.tsx, feedback-form.tsx, login-form.tsx
   lib/limits.ts       # anonymous tier caps (2 files x 5 MB) from clip.php
 ```
 
@@ -166,6 +166,7 @@ Configuration: copy `.env.example` to `.env.local`. Leave `MONGODB_URI` empty to
 | Next.js | `npm run build` | 0 errors, 9 routes + 8 API routes |
 | Next.js | `npm run test:api` | **21/21** |
 | Next.js | `npm run test:share` | **19/19** |
+| Next.js | Real Chrome, 20 viewports × 6 routes (280–1920 px, portrait + landscape) | no horizontal overflow, footer fits, no header collision |
 | Next.js | Real Chrome, two isolated browser contexts (headless, CDP) | tab switching on desktop + mobile, UI upload, SSE-driven update on the other device, ownership affordances — all pass, 0 console errors |
 
 A browser-driven check also caught a layout bug the API suites could not see: the desktop tab rail was painted **under** the content panel, which is also positioned, so the Text/Files icons were not clickable and the app looked stuck on the Text tab. The rail (and the mobile tab row) now carry `z-10`.

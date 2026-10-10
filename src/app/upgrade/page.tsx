@@ -21,7 +21,7 @@ interface Plan {
 const PLANS: Plan[] = [
   {
     name: "Registered user",
-    tagline: "Welcome to AirForShare!",
+    tagline: "Welcome to Easy To Share!",
     features: [
       { label: "Upload up to", value: "5 files at once" },
       { label: "Attach up to", value: "10Mb per file" },
@@ -51,7 +51,7 @@ export default function UpgradePage() {
   return (
     <PageCard className="max-w-[720px] py-[62px]">
       <PageTitle>
-        Welcome to <strong>AirForShare!</strong>
+        Welcome to <strong>Easy To Share!</strong>
       </PageTitle>
 
       <div className="grid gap-6 text-left sm:grid-cols-2">
@@ -60,7 +60,7 @@ export default function UpgradePage() {
             key={plan.name}
             className={`flex flex-col border p-6 ${
               plan.highlight
-                ? "border-accent bg-surface shadow-[0_12px_30px_rgba(99,142,255,0.15)]"
+                ? "border-accent bg-surface shadow-[0_12px_30px_rgba(13,27,61,0.18)]"
                 : "border-line bg-surface-alt"
             }`}
           >
@@ -94,7 +94,7 @@ export default function UpgradePage() {
             <Link
               href={plan.href}
               className={`afs-btn w-full text-center ${
-                plan.highlight ? "" : "border-[#ababab] text-ink"
+                plan.highlight ? "" : "border-[#c7bc9e] text-ink"
               }`}
               data-text={plan.cta}
             >

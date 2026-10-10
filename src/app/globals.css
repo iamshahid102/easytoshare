@@ -1,35 +1,37 @@
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------ *
- * AirForShare design tokens
- * Extracted from the production stylesheet (assets/css/all.css).
- * Exposed through Tailwind v4 @theme so utilities like bg-surface,
- * text-ink, border-line resolve to the original palette.
+ * Easy To Share design tokens
+ *
+ * Brand palette: deep navy `#0D1B3D` on warm cream `#F5F0E1`. Every token
+ * below is a tint/shade derived from those two colors, so the whole UI stays
+ * cohesive. Exposed through Tailwind v4 @theme so utilities like bg-surface,
+ * text-ink and border-line resolve to the palette.
  * ------------------------------------------------------------------ */
 @theme {
-  --color-page: #f4f4f4;
-  --color-surface: #ffffff;
-  --color-surface-alt: #f8f8f8;
-  --color-surface-raised: #ebebeb;
-  --color-input: #fafafa;
-  --color-inverse: #000000;
+  --color-page: #f5f0e1;
+  --color-surface: #fcfaf3;
+  --color-surface-alt: #efe8d6;
+  --color-surface-raised: #e4dbc3;
+  --color-input: #fcfaf3;
+  --color-inverse: #0d1b3d;
 
-  --color-ink: #4a4a4a;
-  --color-heading: #000000;
-  --color-heading-alt: #333333;
-  --color-muted: #9b9b9b;
-  --color-tertiary: #999999;
-  --color-danger: #d0021b;
+  --color-ink: #33415c;
+  --color-heading: #0d1b3d;
+  --color-heading-alt: #1e2c50;
+  --color-muted: #6e6b5c;
+  --color-tertiary: #8c8873;
+  --color-danger: #b23a48;
 
-  --color-accent: #638eff;
-  --color-accent-hover: #745dff;
-  --color-grad-start: #864bff;
-  --color-grad-end: #5082ff;
+  --color-accent: #2f5597;
+  --color-accent-hover: #0d1b3d;
+  --color-grad-start: #0d1b3d;
+  --color-grad-end: #2f5597;
 
-  --color-line: #eaeaea;
-  --color-line-dashed: #dddddd;
-  --color-upload: #ababab;
-  --color-focus: #845afb;
+  --color-line: #e4dbc4;
+  --color-line-dashed: #d6ccb2;
+  --color-upload: #a79f86;
+  --color-focus: #2f5597;
 
   --font-sans: var(--font-open-sans), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, sans-serif;

@@ -5,14 +5,15 @@ import { PageCard, PageTitle } from "@/components/page-card";
 
 export const metadata: Metadata = {
   title: "Login / Register",
-  description: "Sign in to AirForShare to upload more and attach larger files.",
+  description:
+    "Sign in to Easy To Share to upload more and attach larger files.",
 };
 
 export default function LoginPage() {
   return (
     <PageCard className="max-w-[430px] py-[67px] pb-[42px]">
       <PageTitle className="mb-[21px]">
-        Login to <strong>AirForShare</strong>
+        Login to <strong>Easy To Share</strong>
       </PageTitle>
 
       <LoginForm />
